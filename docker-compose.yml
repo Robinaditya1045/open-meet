@@ -1,0 +1,17 @@
+# Single-container deployment. Host networking lets the SFU advertise the
+# machine's real addresses; without it, set MEET_PUBLIC_IP and publish
+# 8088/tcp, 7881/tcp and 7882/udp instead.
+services:
+  meet:
+    build: .
+    image: open-meet
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      MEET_ALLOWED_ORIGINS: ""
+      # MEET_PUBLIC_IP: 203.0.113.10
+    volumes:
+      - meet-data:/app/data
+
+volumes:
+  meet-data:

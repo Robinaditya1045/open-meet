@@ -1,0 +1,79 @@
+.content {
+  z-index: 50;
+  min-width: 220px;
+  max-width: min(340px, calc(100vw - 24px));
+  max-height: min(420px, var(--radix-dropdown-menu-content-available-height));
+  overflow-y: auto;
+  padding: var(--space-1) 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+  box-shadow: var(--shadow-lg);
+  animation: var(--animate-pop-in);
+  transform-origin: var(--radix-dropdown-menu-content-transform-origin);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 40px;
+  padding: 0 var(--space-4) 0 var(--space-3);
+  font-size: var(--text-md);
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.item[data-highlighted] {
+  background: var(--color-hover);
+}
+
+.item[data-disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.danger {
+  color: var(--color-danger);
+}
+
+.icon {
+  display: inline-flex;
+  width: 20px;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+
+.danger .icon {
+  color: inherit;
+}
+
+.icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menuLabel {
+  padding: var(--space-2) var(--space-4) var(--space-1);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+}
+
+.separator {
+  height: 1px;
+  margin: var(--space-1) 0;
+  background: var(--color-border);
+}

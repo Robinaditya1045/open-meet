@@ -1,0 +1,22 @@
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  background: transparent;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.video[data-has-frames] {
+  opacity: 1;
+}
+
+.mirrored {
+  transform: scaleX(-1);
+}
+
+.contain {
+  object-fit: contain;
+}

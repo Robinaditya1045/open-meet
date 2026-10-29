@@ -1,0 +1,17 @@
+{
+  "name": "meet-e2e",
+  "private": true,
+  "type": "module",
+  "description": "Browser tests: real Chrome participants with fake devices against a running server.",
+  "scripts": {
+    "test": "node core.mjs && node moderation.mjs && node present.mjs && node mobile.mjs",
+    "core": "node core.mjs",
+    "moderation": "node moderation.mjs",
+    "mobile": "node mobile.mjs",
+    "present": "node present.mjs",
+    "restart": "node restart.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^23.11.1"
+  }
+}

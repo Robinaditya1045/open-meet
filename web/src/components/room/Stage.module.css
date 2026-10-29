@@ -1,0 +1,146 @@
+.stage {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.spotlightRow,
+.spotlightColumn {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.spotlightColumn {
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.stripVertical,
+.stripHorizontal {
+  display: flex;
+  gap: 8px;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.stripVertical {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stripHorizontal {
+  justify-content: center;
+}
+
+.duo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.pip {
+  position: absolute;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  z-index: 6;
+  animation: var(--animate-rise-in);
+}
+
+.invite {
+  position: absolute;
+  z-index: 8;
+  left: var(--space-2);
+  bottom: var(--space-2);
+  width: min(340px, calc(100% - 16px));
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  color: #15181d;
+  box-shadow: var(--shadow-lg);
+  animation: var(--animate-rise-in);
+}
+
+.inviteHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inviteHeader h2 {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.inviteHeader button,
+.inviteLink button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #5b6370;
+}
+
+.inviteHeader button:hover,
+.inviteLink button:hover {
+  background: rgba(15, 17, 21, 0.06);
+}
+
+.inviteHeader svg,
+.inviteLink svg {
+  width: 18px;
+  height: 18px;
+}
+
+.invite p {
+  margin: var(--space-2) 0 var(--space-3);
+  color: #5b6370;
+  font-size: var(--text-sm);
+}
+
+.inviteLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-1) var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  background: #eef0f3;
+}
+
+.inviteLink span {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--text-sm);
+}

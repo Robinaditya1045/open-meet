@@ -1,0 +1,23 @@
+.dots {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.dots span {
+  width: 3px;
+  height: 12px;
+  border-radius: 2px;
+  background: #fff;
+  transform: scaleY(0.35);
+  transition: transform 90ms linear;
+}
+
+.dots:not(.active) span {
+  transform: scaleY(0.25) !important;
+}

@@ -1,0 +1,145 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: none;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: inherit;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.button:disabled {
+  opacity: 0.45;
+}
+
+.button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.md {
+  width: 40px;
+  height: 40px;
+}
+
+.sm {
+  width: 32px;
+  height: 32px;
+}
+
+.sm svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* The call bar. */
+.control {
+  width: var(--control-size);
+  height: var(--control-size);
+  background: var(--color-control);
+  color: #eef0f3;
+}
+
+.control svg {
+  width: 22px;
+  height: 22px;
+}
+
+.control:hover:not(:disabled) {
+  background: var(--color-control-hover);
+}
+
+.control.off {
+  background: var(--color-danger);
+  color: #fff;
+}
+
+.control.off:hover:not(:disabled) {
+  background: var(--color-danger-hover);
+}
+
+.control.active {
+  background: #cfe0ff;
+  color: #0b3a8c;
+}
+
+.control.active:hover:not(:disabled) {
+  background: #b9d1ff;
+}
+
+.control.danger {
+  width: calc(var(--control-size) * 1.45);
+  background: var(--color-danger);
+  color: #fff;
+}
+
+.control.danger:hover:not(:disabled) {
+  background: var(--color-danger-hover);
+}
+
+/* Flat buttons in panels. */
+.ghost {
+  color: var(--color-text-muted);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--color-hover);
+  color: var(--color-text);
+}
+
+.ghost.active {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-text);
+}
+
+.ghost.off {
+  color: var(--color-danger);
+}
+
+/* On top of video. */
+.overlay {
+  background: rgba(20, 22, 27, 0.6);
+  color: #fff;
+  backdrop-filter: blur(6px);
+}
+
+.overlay:hover:not(:disabled) {
+  background: rgba(20, 22, 27, 0.8);
+}
+
+.overlay.off {
+  background: var(--color-danger);
+}
+
+.badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  box-shadow: 0 0 0 2px var(--color-bg);
+  animation: var(--animate-pop-in);
+}
+
+.shortcut {
+  opacity: 0.7;
+}

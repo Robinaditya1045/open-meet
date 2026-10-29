@@ -1,0 +1,142 @@
+.bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-4);
+  height: var(--bar-height);
+  padding: 0 var(--space-4) env(safe-area-inset-bottom);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  color: var(--color-text);
+  font-size: var(--text-lg);
+  white-space: nowrap;
+}
+
+.time {
+  font-variant-numeric: tabular-nums;
+}
+
+.divider {
+  width: 1px;
+  height: 18px;
+  background: var(--color-border-strong);
+}
+
+.code {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.split {
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-full);
+  background: #3a404b;
+}
+
+.splitOff {
+  background: #5a2a2a;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-1);
+  color: var(--color-text);
+}
+
+.right button {
+  width: 44px;
+  height: 44px;
+}
+
+.right button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.reactions,
+.menuReactions {
+  display: flex;
+  gap: var(--space-1);
+  padding: var(--space-2);
+}
+
+.reactions {
+  z-index: 50;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-lg);
+  animation: var(--animate-pop-in);
+}
+
+.menuReactions {
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 260px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-1);
+}
+
+.emoji {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  transition: transform var(--duration-fast) var(--ease-spring);
+}
+
+.emoji[data-highlighted] {
+  background: var(--color-hover);
+  transform: scale(1.18);
+}
+
+@media (max-width: 1100px) {
+  .left {
+    display: none;
+  }
+
+  .bar {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .bar {
+    display: flex;
+    justify-content: center;
+    padding: 0 var(--space-2) env(safe-area-inset-bottom);
+  }
+
+  .right {
+    display: none;
+  }
+
+  .center {
+    gap: var(--space-2);
+  }
+
+  .split {
+    background: transparent;
+  }
+}

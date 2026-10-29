@@ -1,0 +1,104 @@
+.stack {
+  position: fixed;
+  z-index: 30;
+  left: var(--space-4);
+  bottom: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: min(360px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.inCall {
+  bottom: calc(var(--bar-height) + var(--space-2));
+}
+
+.toast {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  padding: var(--space-3) var(--space-10) var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: #2b3039;
+  color: #eef0f3;
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+  animation: var(--animate-rise-in);
+}
+
+.body {
+  flex: 1 1 200px;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.message {
+  font-size: var(--text-md);
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-1);
+  margin-left: auto;
+}
+
+.action {
+  height: 32px;
+  padding: 0 var(--space-3);
+  border: none;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: #8ab4ff;
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.action:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.primary {
+  background: #4c8dff;
+  color: #fff;
+}
+
+.primary:hover {
+  background: #6aa0ff;
+}
+
+.close {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #a3a9b4;
+}
+
+.close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.close svg {
+  width: 16px;
+  height: 16px;
+}

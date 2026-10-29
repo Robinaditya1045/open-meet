@@ -1,0 +1,13 @@
+.content {
+  z-index: 60;
+  max-width: 260px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  background: #3b4049;
+  color: #f2f4f7;
+  font-size: var(--text-xs);
+  line-height: 1.4;
+  box-shadow: var(--shadow-md);
+  animation: var(--animate-fade-in);
+  user-select: none;
+}

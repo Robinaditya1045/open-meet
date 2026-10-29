@@ -1,0 +1,108 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.header {
+  padding: var(--space-4) var(--space-6);
+}
+
+.end {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-8) var(--space-4) var(--space-16);
+  text-align: center;
+  animation: var(--animate-rise-in);
+}
+
+.end h1 {
+  margin: 0;
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+.end p {
+  margin: 0 0 var(--space-6);
+  max-width: 460px;
+  color: var(--color-text-muted);
+  text-wrap: pretty;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.waiting {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 1fr);
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) var(--space-12);
+}
+
+.preview {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: #202329;
+}
+
+.cameraOff {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e9ebef;
+  font-size: var(--text-xl);
+}
+
+.waitingText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+}
+
+.waitingText h1 {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-2xl);
+  font-weight: 500;
+}
+
+.waitingText p {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-muted);
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--color-accent-soft);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: var(--animate-spin);
+}
+
+@media (max-width: 900px) {
+  .waiting {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+    padding: var(--space-2) var(--space-4) var(--space-8);
+  }
+}

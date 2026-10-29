@@ -1,0 +1,18 @@
+# Dependencies and builds
+node_modules/
+web/dist/
+bin/
+
+# Local state
+server/data/
+data/
+.env
+*.local
+
+# Browser test output
+e2e/shots/
+
+# Editors
+.DS_Store
+.idea/
+.vscode/

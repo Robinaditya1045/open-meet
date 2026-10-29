@@ -1,0 +1,272 @@
+.tile {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-tile);
+  isolation: isolate;
+  animation: var(--animate-pop-in);
+}
+
+/* The speaking ring draws over the video, inside the tile's own corners. */
+.tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 0 transparent;
+  pointer-events: none;
+  transition: box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.speaking::after {
+  box-shadow: inset 0 0 0 3px var(--color-speaking);
+}
+
+.screen {
+  background: #0b0d10;
+}
+
+.spotlight {
+  border-radius: var(--radius-md);
+}
+
+.pip {
+  box-shadow: var(--shadow-lg);
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarWrap {
+  display: inline-flex;
+  border-radius: 50%;
+  transition: box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.avatarSpeaking {
+  box-shadow: 0 0 0 4px rgba(110, 168, 255, 0.35);
+}
+
+.loading {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  animation: var(--animate-pulse);
+}
+
+.presenting {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  color: var(--color-text);
+  text-align: center;
+  background: linear-gradient(160deg, #1c2a44, #141821);
+}
+
+.presenting svg {
+  width: 32px;
+  height: 32px;
+  color: var(--color-accent-text);
+}
+
+.presenting button {
+  height: 36px;
+  padding: 0 var(--space-4);
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.presenting button:hover {
+  background: var(--color-accent-hover);
+}
+
+.strip .presenting span,
+.pip .presenting span {
+  display: none;
+}
+
+.topLeft,
+.topRight {
+  position: absolute;
+  z-index: 2;
+  top: var(--space-2);
+  display: flex;
+  gap: var(--space-1);
+}
+
+.topLeft {
+  left: var(--space-2);
+}
+
+.topRight {
+  right: var(--space-2);
+}
+
+.hand,
+.network,
+.muted {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.hand {
+  background: #f8d26a;
+  color: #3b2a00;
+  animation: var(--animate-pop-in);
+}
+
+.network {
+  background: rgba(229, 65, 58, 0.9);
+  color: #fff;
+}
+
+.muted {
+  background: rgba(20, 22, 27, 0.6);
+  color: #fff;
+}
+
+.hand svg,
+.network svg,
+.muted svg {
+  width: 16px;
+  height: 16px;
+}
+
+.levelDots {
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.quiet {
+  opacity: 0;
+}
+
+.label {
+  position: absolute;
+  z-index: 2;
+  left: var(--space-2);
+  bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  max-width: calc(100% - 16px);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-tile-label);
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.label span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pinIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.reconnecting {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background: rgba(10, 12, 16, 0.6);
+  color: #fff;
+  font-size: var(--text-sm);
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: var(--animate-spin);
+}
+
+.actions {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  gap: var(--space-2);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.tile:hover .actions,
+.tile:focus-within .actions {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .actions {
+    top: auto;
+    left: auto;
+    right: var(--space-2);
+    bottom: var(--space-2);
+    transform: none;
+    opacity: 1;
+  }
+
+  .actions > :first-child {
+    display: none;
+  }
+}
+
+.strip .actions {
+  gap: var(--space-1);
+}
+
+.overflow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.overflowFaces {
+  display: flex;
+}
+
+.overflowAvatar {
+  box-shadow: 0 0 0 3px var(--color-tile);
+}
+
+.overflowAvatar + .overflowAvatar {
+  margin-left: -10px;
+}
+
+.overflowCount {
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
